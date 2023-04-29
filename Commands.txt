@@ -3,154 +3,91 @@ LINUX
 sudo -> super user do
 Ctrl+Alt+T = to open terminal
 
-Commands:
-1. pwd: print current directory
-
-2. cd: change directory
-cd /(root directory), cd /home, cd AnkanHazra, cd ./(current directory),cd ../, cd ./lib, cd ~(home directory), cd ~/Documents
-
-3. ls: list all contents
-ls -l, ls -r, ls -p, ls -s, ls ~/Documents, l, ls --help, ls -a 
-
-4. clear: clear screen
-
-5. nano: open a file
-sudo nano ./file.txt  
-Ctrl+o+Enter(to save), Ctrl+X(to exit)
-
-6. !!: run the previous Command
-sudo !!
-
-7. su: switch user
-sudo su, su AnkanHazra
-
-8. apt-get: install application
+apt: install application
 sudo apt update && sudo apt upgrade, sudo apt-get install bluefish, sudo apt-get remove bluefish
 
-9. apt-cache: check existance of an application
+apt-cache: check existance of an application
 apt-cache search bluefish*, apt-cache policy bluefish
 
-10. dpkg: install .deb afile
+dpkg: install .deb afile
 sudo dpkg -i ./filename.deb
 
-11. chown: change ownership of a file
+*Basic Commands:
+### pwd: print current directory
+pwd 
+
+### cd: change directory
+cd /(root directory), cd /home, cd AnkanHazra, cd ./(current directory),cd ../, cd ./lib, cd ~(home directory), cd ~/Documents
+
+### ls: list all contents
+ls -l, ls -r, ls -p, ls -s, ls ~/Documents, l, ls --help, ls -a 
+
+### clear: clear screen
+clear
+
+### !!: run the previous Command
+sudo !!
+
+### who:
+who, who -a, whoami
+
+### tty:
+tty
+
+### adduser:
+sudo adduser roni
+
+### su: switch user
+sudo su, su roni
+
+### passwd:
+sudo passwd roni 
+
+### exit:
+exit 
+
+### chown: change ownership of a file
 sudo chown root:AnkanHazra file.txt, sudo chown AnkanHazra:AnkanHazra file.txt, sudo chown -R AnkanHazra:AnkanHazra ./Linux
 -R(recursive)
 
-12. chmod: change permission of a file
+### chmod: change permission of a file
 sudo chmod 664 file.txt
 4->readale, 6->readable & writable, 7-> nothing, -R(recursive)
- 
-13. rm: delete files and folders
-rm file.txt, rm -rf Linux, rm -r Folder1/, rm *
 
-14. mkdir: make directory
+### mkdir: make directory
 mkdir Linux, mkdir .secret 
 
-15. touch: creat new files
+### nano: open a file
+sudo nano ./file.txt  
+Ctrl+o+Enter(to save), Ctrl+X(to exit) 
+
+### touch: creat new files
 touch file1.txt file2.py file3.c
 
-16. open:
+### open:
 open file1.txt, open -a Atom file2.py
 
-17. cat:
-cat file.txt
+### echo:
+echo Hello!
 
-18. *: everything
-rm Linux/*, rm Linux/*.txt
+### cat: print file content
+cat file.txt, cat>file.txt
 
-19. cp: copy
+### shred:
+shred file.txt
+
+### cp: copy
 cp ./file.txt ./Linux/file.txt
 
-20. mv: move and also rename
+### mv: move and also rename
 mv file.txt ./Linux/file.txt, mv Linux LInuxBasics
 
-21. find: find
+### rm: delete files and folders
+rm file.txt, rm -rf Linux, rm -r Folder1/, rm *, rm Linux/*.txt, rmdir Empty
+
+### ln: link to files
+ln -s filepath ref
+
+### find: find
 find . -type f -name "*.txt", find /etc -type f -iname "*.txt"(case-insensitive), find . -type f -not -iname "*.php", find . -type f -perm 664, find . -size +1M
 f -> file, d-> directory
-
-22. which:
-which mongod
-
-23. history:
-history
-
-24. ifconfig:
-ifconfig
-
-25. iwconfig:
-iwconfig
-
-26. ping:
-ping google.com
-
-27. uname:
-uname -a
-
-28. blkid:
-blkid
-
-29. top:
-top
-
-30. df:
-df
-
-31. lsusb:
-lsusb
-
-32. lspci:
-lspci
-
-33. shutdown:
-sudo shutdown -r, sudo shutdown -h now
-
-34. grep: find in file
-grep "function" file.php file2.php, grep -n -i "function" ./*, find . -type f -iname "*.php" -exec grep -i -n "function" {} +
-flags = i-> ignore case sensitivity, n-> line number
-
-35. >: redirect the file
-ls > outfile.txt  
-
-36. tee:
-find . -type f -iname "*.php" -exec grep -i -n "function" {} + | tee of.txt
-  
-37. top: process of running application
-ctrl + c -> escape
-
-38. ps aux: all processes
-ps aux | grep liri-browser
-
-39. pgrep: process ids
-pgrep liri-browser
-
-40. kill: close window
-kill -9 6300, killall liri-browser
-
-41. service:
-sudo service elasticsearch start, sudo service elasticsearch stop, sudo nano /etc/elasticsearch/ elasticssearch.yml, sudo service elasticsearch restart
-
-42. systemctl:
-sudo systemctl start elasticsearch, sudo systemctl stop elasticsearch
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
