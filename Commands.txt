@@ -1,77 +1,115 @@
 LINUX
 
-sudo -> super user do
-Ctrl+Alt+T = to open terminal
+{Ctrl+Alt+T = to open terminal}
 
-apt: install application
-sudo apt update && sudo apt upgrade, sudo apt-get install bluefish, sudo apt-get remove bluefish
+*Commands:
+### man: access manual pages
+man pwd, man cat
 
-apt-cache: check existance of an application
-apt-cache search bluefish*, apt-cache policy bluefish
+### sudo - super user do: execute with administrative privilege
+sudo apt install finger
 
-dpkg: install .deb afile
-sudo dpkg -i ./filename.deb
+### alias: create shortcuts
+alias lsl="ls -l"
 
-*Basic Commands:
-### pwd: print current directory
+### unalias: delete shortcuts 
+unalias lsl
+
+### pwd: print working directory
 pwd 
 
-### cd: change directory
-cd /(root directory), cd /home, cd AnkanHazra, cd ./(current directory),cd ../, cd ./lib, cd ~(home directory), cd ~/Documents
+### cd: navigate directories
+cd /(root directory), cd /home, cd ankan, cd ./(current directory),cd ../, cd ./lib, cd ~(home directory), cd ~/Documents
 
-### ls: list all contents
-ls -l, ls -r, ls -p, ls -s, ls ~/Documents, l, ls --help, ls -a 
+### ls: list contents
+ls -l, ls -a, l, ls ~/Documents
 
-### clear: clear screen
+### locate: find files
+locate file.txt
+
+### clear: clear terminal display
 clear
 
-### !!: run the previous Command
-sudo !!
+### !!: run previous Command
+!!
 
-### who:
-who, who -a, whoami
+### date: show date
+date 
 
-### tty:
+### time: display executing time
+time 
+
+### cal: show calendar
+cal
+
+### tty: write file name of terminal
 tty
 
-### adduser:
-sudo adduser roni
+### uname: display information about system
+uname, uname -a
 
-### su: switch user
+### who: print information about user
+who, who -a, whoami
+
+### whatis: find usage of command 
+whatis cat
+
+### which: locate the executable files
+which cat
+
+### whereis: locate binary, source and manual pages for command
+whereis cat
+
+### useradd: create or update users
+sudo useradd roni, sudo adduser roni
+
+### usermod: modify attributes of existing user
+usermod JournalDev -a -G sudo, audio, mysql
+
+### userdel: delete a user
+sudo userdel roni
+
+### su: switch users
 sudo su, su roni
 
-### passwd:
+### passwd: change user password
 sudo passwd roni 
 
-### exit:
+### exit: exit from current shell
 exit 
 
-### chown: change ownership of a file
-sudo chown root:AnkanHazra file.txt, sudo chown AnkanHazra:AnkanHazra file.txt, sudo chown -R AnkanHazra:AnkanHazra ./Linux
--R(recursive)
+### finger: give details of all users
+finger roni
 
-### chmod: change permission of a file
-sudo chmod 664 file.txt
-4->readale, 6->readable & writable, 7-> nothing, -R(recursive)
-
-### mkdir: make directory
+### mkdir: make directories
 mkdir Linux, mkdir .secret 
 
-### nano: open a file
-sudo nano ./file.txt  
-Ctrl+o+Enter(to save), Ctrl+X(to exit) 
-
-### touch: creat new files
+### touch: create blank files
 touch file1.txt file2.py file3.c
 
-### open:
+### nano/gedit/vim: 
+nano file.txt
+
+### file: determine type of a file
+file file.txt 
+
+### wc: find word counts, number of lines of files
+wc file.txt
+
+### open: open a file
 open file1.txt, open -a Atom file2.py
 
-### echo:
+### echo: print any text
 echo Hello!
 
+### bc - basic calculator: calculates
+echo "4+5-3" | bc
+
 ### cat: print file content
-cat file.txt, cat>file.txt
+cat file.txt, cat > file.txt, cat -n file.txt
+
+### less:
+cat file.txt | less
 
 ### shred:
 shred file.txt
@@ -83,11 +121,143 @@ cp ./file.txt ./Linux/file.txt
 mv file.txt ./Linux/file.txt, mv Linux LInuxBasics
 
 ### rm: delete files and folders
-rm file.txt, rm -rf Linux, rm -r Folder1/, rm *, rm Linux/*.txt, rmdir Empty
+rm file.txt, rm -rf Linux, rm -r Folder1(Files & Folders), rm *, rm Linux/*.txt, rmdir Empty(Empty Folder)
+
+### dd:
+dd if = /dev/sdb of = /dev/sda
 
 ### ln: link to files
-ln -s filepath ref
+ln -s file filelink
+
+### grep:
+cat file.txt | grep "hello"
+
+### awk:
+awk '/ CS/ {print $1,$5} student.txt
+
+### head:
+head file.txt
+
+### tail:
+tail file.txt 
+
+### diff:
+diff file1 file2
+
+### cmp:
+cmp file1 file2
+
+### comm:
+comm file1 file2
+
+### sort:
+sort file.txt
 
 ### find: find
 find . -type f -name "*.txt", find /etc -type f -iname "*.txt"(case-insensitive), find . -type f -not -iname "*.php", find . -type f -perm 664, find . -size +1M
 f -> file, d-> directory
+
+### zip:
+zip files.zip file1 file2
+
+### unzip:
+unzip files.zip
+
+### tar:
+tar -cvf files.tar file1 file2, tar -xvf files.tar
+
+### chmod: change permission of a file
+sudo chmod 664 file.txt, chmod +x bashfile.sh
+
+### chown: change ownership of a file
+sudo chown root:ankan file.txt, sudo chown ankan:ankan file.txt, sudo chown -R ankan:ankan ./Linux
+
+### export:
+export PS1="\u@\h:\w -->> "
+
+### ssh:
+ssh roni@96.126.117.9
+
+### service:
+service ssh status, service ssh stop, service ssh start
+
+### wget:
+wget https://ankanhazra.com/personal.txt
+
+### curl:
+curl https://ankanhazra.com/personal.txt > file.txt
+
+### hostname:
+hostname
+
+### ifconfig 
+ifconfig
+
+### ip:
+ip addr
+
+### resolvectl status:
+resolvectl status
+
+### ping:
+pink ankanhazra.com, ping -c 5 -s 500 ankanhazra.com
+
+### traceroute:
+traceroute ankanhazra.com
+
+### netstat:
+netstat, netstat -tulpn
+
+### ss:
+ss, ss -tulpn
+
+### apt/yum/pacman:
+sudo apt update, sudo apt-get upgrade, sudo apt autoremove, sudo apt clean
+
+### iptables:
+iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+
+### ufw:
+sudo ufw allow 80, sudo ufw enable
+
+### neofetch:
+neofetch
+
+### free:
+free
+
+### mount:
+mount /dev/cdrom /mnt
+
+### df:
+df, df -h
+
+### du:
+du /home/user/Documents
+
+### ps:
+ps, ps -aux
+
+### top:
+top
+
+### htop:
+htop
+
+### kill:
+kill -9 1169
+
+### pkill
+pkill -f poces
+
+### systemctl:
+sudo systemctl start apache2, sudo systemctl status apache2, sudo systemctl stop apache2, sudo systemctl restart apache2
+
+### history:
+history
+
+### reboot:
+sudo reboot
+
+### shutdown:
+sudo shutdown, sudo shutdown -h now
