@@ -1,4 +1,4 @@
-LINUX
+-----LINUX-----
 
 {Ctrl+Alt+T = to open terminal}
 
@@ -37,7 +37,7 @@ clear
 date 
 
 ### time: display executing time
-time 
+time, time ls
 
 ### cal: show calendar
 cal
@@ -94,170 +94,176 @@ nano file.txt
 file file.txt 
 
 ### wc: find word counts, number of lines of files
-wc file.txt
+wc file.txt, wc -l state.txt capital.txt
 
 ### open: open a file
 open file1.txt, open -a Atom file2.py
 
-### echo: print any text
+### echo: print any texts
 echo Hello!
 
 ### bc - basic calculator: calculates
-echo "4+5-3" | bc
+echo "4+5-3" | bc, echo "scale($pi)" | bc -l
 
 ### cat: print file content
 cat file.txt, cat > file.txt, cat -n file.txt
 
-### less:
+### less: display paged outputs
 cat file.txt | less
 
-### shred:
+### shred: overwrite the contents
 shred file.txt
 
-### cp: copy
+### cp: copy files
 cp ./file.txt ./Linux/file.txt
 
-### mv: move and also rename
+### mv: move and also rename files
 mv file.txt ./Linux/file.txt, mv Linux LInuxBasics
 
 ### rm: delete files and folders
 rm file.txt, rm -rf Linux, rm -r Folder1(Files & Folders), rm *, rm Linux/*.txt, rmdir Empty(Empty Folder)
 
-### dd:
+### dd: create bootable USB sticks
 dd if = /dev/sdb of = /dev/sda
 
 ### ln: link to files
 ln -s file filelink
 
-### grep:
+### grep: search a string 
 cat file.txt | grep "hello"
 
-### awk:
+### awk: searches files for text containing a pattern
 awk '/ CS/ {print $1,$5} student.txt
 
-### head:
+### head: print top N lines
 head file.txt
 
-### tail:
+### tail: print last N lines
 tail file.txt 
 
-### diff:
+### diff: display differences
 diff file1 file2
 
-### cmp:
+### cmp: compare two files
 cmp file1 file2
 
-### comm:
+### comm: compare two sorted files
 comm file1 file2
 
-### sort:
+### sort: sort content of a file
 sort file.txt
 
-### find: find
+### find: find files and directories
 find . -type f -name "*.txt", find /etc -type f -iname "*.txt"(case-insensitive), find . -type f -not -iname "*.php", find . -type f -perm 664, find . -size +1M
 f -> file, d-> directory
 
-### zip:
+### zip: zip files
 zip files.zip file1 file2
 
-### unzip:
+### unzip: unzip files 
 unzip files.zip
 
-### tar:
+### tar: extract and compress files
 tar -cvf files.tar file1 file2, tar -xvf files.tar
 
 ### chmod: change permission of a file
-sudo chmod 664 file.txt, chmod +x bashfile.sh
+sudo chmod 664 file.txt, chmod a+rwx bashfile.sh, chmod ugo+rw file.sh
 
 ### chown: change ownership of a file
-sudo chown root:ankan file.txt, sudo chown ankan:ankan file.txt, sudo chown -R ankan:ankan ./Linux
+sudo chown root:ankan file.txt, sudo chown -R ankan:ankan ./Linux
 
-### export:
+### export: export environment variables
 export PS1="\u@\h:\w -->> "
 
-### ssh:
+### ssh: secure shell command
 ssh roni@96.126.117.9
 
-### service:
+### service: start and stop services
 service ssh status, service ssh stop, service ssh start
 
-### wget:
+### wget: direct download files
 wget https://ankanhazra.com/personal.txt
 
-### curl:
+### curl: download files
 curl https://ankanhazra.com/personal.txt > file.txt
 
-### hostname:
+### hostname: display name of host system
 hostname
 
-### ifconfig 
+### ifconfig: display network interfaces and IP addresses 
 ifconfig
 
-### ip:
+### ip addr: show ip address
 ip addr
 
-### resolvectl status:
+### resolvectl status: show global and per-link DNS settings
 resolvectl status
 
-### ping:
+### ping: send ICMP ECHO_REQUEST
 pink ankanhazra.com, ping -c 5 -s 500 ankanhazra.com
 
-### traceroute:
+### traceroute: trace all network hops to reach destination
 traceroute ankanhazra.com
 
-### netstat:
+### netstat: show both listening and non-listening sockets
 netstat, netstat -tulpn
 
-### ss:
+### ss: use to dump socket statistics
 ss, ss -tulpn
 
 ### apt/yum/pacman:
 sudo apt update, sudo apt-get upgrade, sudo apt autoremove, sudo apt clean
 
-### iptables:
+### iptables: set up and maintain tables for Netfilter firewall for IPv4
 iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 
-### ufw:
+### ufw: firewell command
 sudo ufw allow 80, sudo ufw enable
 
-### neofetch:
+### neofetch: display information about os
 neofetch
 
-### free:
+### free: display memory usage
 free
 
-### mount:
+### mount: provide access to an entire filesystem in one directory
 mount /dev/cdrom /mnt
 
-### df:
+### df: display disk space usage
 df, df -h
 
-### du:
+### du: estimate file space usage
 du /home/user/Documents
 
-### ps:
+### jobs: list jobs
+jobs 
+
+### ps: give information about currently runnning process
 ps, ps -aux
 
-### top:
+### top: show an overall system view
 top
 
-### htop:
+### htop: view interactive process
 htop
 
-### kill:
+### kill: terminate a process
 kill -9 1169
 
-### pkill
+### killall: cancel all processes
+sudo killall yes
+
+### pkill: kill program processes based on parameters
 pkill -f poces
 
-### systemctl:
+### systemctl: examine and control the state of “systemd” system and service manager
 sudo systemctl start apache2, sudo systemctl status apache2, sudo systemctl stop apache2, sudo systemctl restart apache2
 
-### history:
+### history: view the previously executed commands
 history
 
-### reboot:
+### reboot: reboot machine
 sudo reboot
 
-### shutdown:
+### shutdown: shutdown machine
 sudo shutdown, sudo shutdown -h now
